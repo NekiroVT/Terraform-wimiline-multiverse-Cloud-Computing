@@ -1,27 +1,38 @@
-# Wimiline: Terraform AWS y operación
+# Wimiline: Terraform AWS y Operación (Entregable 3)
 
-Reconstrucción iniciada el 20/11/2026 en AWS Academy, región us-east-1. La infraestructura se gestiona desde esta carpeta. El estado local, planes y credenciales contienen información sensible y no deben compartirse. No se deben borrar los archivos de estado.
+Reconstrucción implementada y validada el 20/11/2026 en AWS Academy, región `us-east-1`. La infraestructura productiva se gestiona desde esta carpeta. El estado local, planes y credenciales contienen información sensible y no deben compartirse.
 
-## Aplicar y revisar
+## Aplicar y Revisar
 
-Desde esta carpeta ejecutar `terraform init`, `terraform plan` y, después de revisar, `terraform apply`. El certificado ACM del dominio requiere validación DNS. La AMI Ubuntu usada está fijada en `ami_id` para evitar que el último parche publicado cambie el plan; revisar y actualizarla deliberadamente cuando corresponda. El código usa `multiverso-release-v3.zip` en esta carpeta, creado con el frontend existente y el backend compilado más reciente. Conservarlo junto con el código Terraform. Los secretos de base de datos y JWT están en Parameter Store y también en el estado sensible de Terraform.
+Desde esta carpeta ejecutar `terraform init`, `terraform plan` y, después de revisar, `terraform apply`.
+- **Certificado ACM:** El certificado TLS/ACM del dominio está validado y asociado al ALB HTTPS (puerto 443 con redirección forzada desde HTTP 80).
+- **AMI Ubuntu:** Fijada en `ami_id` para garantizar inmutabilidad y predictibilidad en los planes de despliegue.
+- **Paquete de Aplicación:** Se utiliza `multiverso-release-v3.zip` ubicado en esta carpeta, que contiene los binarios compilados de la API Spring Boot (`app.jar`) y el bundle empaquetado del frontend web.
+- **Secretos:** Las credenciales de base de datos PostgreSQL y llaves JWT se gestionan mediante AWS Systems Manager (SSM) Parameter Store.
 
 ## Particularidad AWS Academy y S3
 
-La política de la organización deniega `s3:GetBucketObjectLockConfiguration`, lo que impide que el recurso `aws_s3_bucket` del proveedor lea incluso un bucket recién creado. Por ello los tres buckets se crean y eliminan mediante recursos `terraform_data` y `bucket_lifecycle.py`, que invoca AWS CLI. Los bloqueos públicos, versionado, objetos, política y retención se declaran con recursos Terraform normales. La existencia y el contenido de los buckets no se detectan como drift mediante `terraform_data`; comprobarlos con `aws s3api` al revisar el entorno. No crear otros buckets con estos nombres fuera de este estado.
+La directiva organizacional del entorno de laboratorio de AWS Academy deniega explícitamente `s3:GetBucketObjectLockConfiguration`. Debido a esto, el recurso estándar `aws_s3_bucket` falla al intentar leer buckets recién aprovisionados. 
 
-## Respaldo y continuidad
+Para sortear esta restricción sin comprometer la arquitectura:
+- Los tres buckets (aplicación, respaldos y auditoría CloudTrail) se crean y eliminan mediante el recurso `terraform_data` ejecutando [bucket_lifecycle.py](bucket_lifecycle.py), que utiliza AWS CLI.
+- El bloqueo de acceso público (`aws_s3_bucket_public_access_block`), el versionado, las políticas de bucket y la encriptación se configuran con recursos estándar de Terraform.
+- Para verificar el contenido o drift de los buckets, consultar directamente con `aws s3api` o AWS CLI.
 
-Se acordó cambiar el flujo: dos EC2 ejecutan cron cada tres horas. Cada una exporta PostgreSQL a S3, descarga el archivo desde S3 y lo sube por HTTPS a Azure Blob con una SAS limitada de creación y escritura. La URL y la SAS se mantienen en SSM; el estado Terraform también contiene información sensible. Se verificó manualmente una ejecución automática de extremo a extremo y SHA-256 desde la VM Azure. Se probó además una restauración aislada con datos sintéticos. Aún falta observar un disparo automático del nuevo cron de tres horas sin intervención y medir el RTO integral.
+## Respaldo y Continuidad Verificados
 
-El endpoint público de Storage permite solo las IP del NAT regional AWS (35.172.14.7 y 100.48.128.175); el Private Endpoint sigue para la VM Azure. La SAS configurada vence el 20/12/2026 a las 00:00 UTC (19/12 a las 19:00 en Lima); se debe renovar antes mediante Terraform en Azure y reaplicar AWS para actualizar Parameter Store. Las IP del NAT regional pueden cambiar o ampliarse: contrastarlas y actualizar la lista de Azure cuando ocurra. La alarma CopyFailure indica error y CopySuccess ausente durante 4 horas indica falta de copias. No almacenar SAS ni credenciales en documentos o capturas.
+El pipeline de continuidad y contingencia opera bajo un esquema multicloud activo-contingencia:
+1. **Cron Automatizado de 3 Horas:** Ambas instancias EC2 del Auto Scaling Group ejecutan de forma sincronizada el cron `15 */3 * * *` (a los minutos 15 de las horas 00, 03, 06, 09, 12, 15, 18 y 21 UTC).
+2. **Generación de Respaldos:** Cada ejecución produce un volcado lógico de PostgreSQL (`pg_dump`), calcula su huella digital SHA-256 (`respaldo.dump.sha256`) y genera el archivo `release.sha256` con la huella del paquete de aplicación instalado.
+3. **Sincronización Multicloud:** El volcado se almacena en el bucket privado de S3 y se transmite de forma directa por HTTPS hacia Azure Blob Storage mediante una SAS limitada de escritura. El firewall de Azure Blob Storage restringe el ingreso exclusivamente a las IPs elásticas del NAT Gateway de AWS (`35.172.14.7` y `100.48.128.175`).
+4. **Verificación en Producción:**
+   - **Disparo Automático Comprobado:** El 20/11/2026 a las 21:15 UTC se observó y constató la ejecución automática del cron en ambas instancias, con recepción y validación de hash íntegra en Azure Blob.
+   - **Medición de RTO Autónomo:** Se ejecutó con éxito el ensayo de recuperación aislada en Azure (`06_Pruebas/recuperacion-autonoma-azure.json`), logrando restaurar la base de datos y desplegar la versión vinculada de la aplicación en **268.2 segundos (~4 minutos con 28 segundos)** con respuestas HTTP 200 en todos los servicios, superando ampliamente la meta de RTO $\le 60$ min.
+5. **Monitoreo y Alerta:** La métrica personalizada `CopySuccess` y `CopyFailure` supervisa las transferencias. Si no se registra una copia exitosa en una ventana de 4 horas, CloudWatch activa la alarma `wimiline-respaldo-azure-error` y notifica por SNS.
 
-El despliegue depende de `respaldo.auto.tfvars` en cada carpeta: Azure habilita `habilitar_respaldo_desde_aws` y define `ips_nat_aws`; AWS habilita `habilitar_respaldo_azure`. El estado de AWS lee el estado local Azure, por lo que ambos deben conservarse juntos. La sesión AWS fue revocada durante una renovación; al reanudar se recuperaron instancias y servicio. Comprobar siempre la versión y salud de las instancias tras reiniciar el laboratorio.
+## Eliminación Futura y Desmantelamiento
 
-## Eliminación futura
-
-El usuario pidió poder eliminar lo creado con Terraform más adelante. La orden de destrucción debe ejecutarse solo cuando lo solicite expresamente. Revisar el plan y guardar antes cualquier dato requerido: este código elimina los objetos y sus versiones de los buckets y el RDS no genera snapshot final. La eliminación de AWS y Azure se ejecuta desde sus respectivas carpetas de estado; no borrar estados manualmente. IAM, permisos del laboratorio o retenciones ajenos podrían impedir parte de la limpieza y habría que verificar ambos inventarios al finalizar.
-
-AWS Academy denegó StartInstanceRefresh mediante una política organizacional. Para desplegar el backend autorizado se actualizó la versión de la plantilla y se sustituyeron las instancias una a una, esperando destinos saludables; las sustituciones operativas por CLI no forman parte de terraform apply. El código elimina los recursos del grupo mediante Terraform cuando el usuario lo pida.
-
-El parámetro `/multiverso/prod/gmail-app-password` fue creado directamente por el usuario y no está administrado en el estado Terraform. Al realizar una futura eliminación, consultar si debe conservarse o eliminarse por separado; no incluir su valor en archivos o capturas.
+Para destruir los recursos cuando finalice la evaluación académica:
+1. Seguir la secuencia descrita en [../GUIA_OPERACION_Y_RETIRO.md](../GUIA_OPERACION_Y_RETIRO.md).
+2. Recordar que `terraform destroy` en AWS vaciará y eliminará los buckets creados mediante el script auxiliar `bucket_lifecycle.py`.
+3. El parámetro `/multiverso/prod/gmail-app-password` fue creado manualmente como `SecureString` fuera de Terraform y requiere ser conservado o retirado de forma independiente.

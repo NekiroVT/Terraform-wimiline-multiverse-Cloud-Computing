@@ -1,0 +1,22 @@
+# Enlace del Video Demostrativo Obligatorio — Sustentación Entregable 3
+
+Proyecto: Arquitectura Multicloud AWS + Azure para Wimiline E.I.R.L.
+Curso: Cloud Computing — Universidad Peruana Unión
+Duración requerida: 5 a 10 minutos
+
+================================================================================
+ENLACE DEL VIDEO:
+[Coloca aquí el enlace de YouTube / Google Drive / OneDrive con permisos de visualización pública o institucional]
+
+Ejemplo: https://youtu.be/xxxxxxxxxxx ó https://drive.google.com/file/d/xxxxxxxxxxx/view
+================================================================================
+
+ESTRUCTURA DEL VIDEO GRABADO:
+1. (00:00 - 01:30) Introducción y problemática inicial (monolito y copias manuales).
+2. (01:30 - 03:30) Demostración del portal en producción https://multiverso.wimiline.com/ y estado del backend.
+3. (03:30 - 05:30) Consola de AWS: VPC, subredes públicas/privadas, ALB HTTPS, EC2 Multi-AZ, RDS PostgreSQL y CloudWatch.
+4. (05:30 - 07:30) Consola de Microsoft Azure: VNet, Private Endpoint, Storage Blob, Azure Monitor y presupuesto de USD 20.
+5. (07:30 - 09:00) Evidencias de Alta Disponibilidad y Contingencia:
+   - Sincronización de respaldos cada 3 horas por HTTPS con SAS y firewall NAT.
+   - Ensayos de tolerancia a fallos (75/75 HTTP 200) y recuperación aislada en 268.2 s (~4 min 28 s).
+6. (09:00 - 10:00) Conclusiones y recomendaciones para la empresa.

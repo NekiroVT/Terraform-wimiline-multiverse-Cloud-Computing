@@ -1,9 +1,21 @@
-# Diagramas de Wimiline — 20/11/2026
+# Diagramas de Arquitectura — Wimiline (Entregable 3)
 
-`Arquitectura_multicloud_implementada_2026-11-20.png` representa el flujo que se implementó y probó después de la autorización del usuario: RDS → S3 → EC2 → Azure Blob por HTTPS, con una SAS de escritura y firewall que permite las IP del NAT AWS. La VM Azure sigue accediendo por Private Endpoint y se usó para verificar y restaurar una copia.
+Esta carpeta reúne las representaciones visuales independientes exigidas por la plantilla del proyecto de Cloud Computing (página 18), así como los diagramas oficiales integrados en el informe final.
 
-El HTML y SVG conservados en `../Arquitectura V3 Oficial` son la referencia interactiva anterior. En ellos la VM Azure inicia la descarga desde S3; ese recorrido se probó una vez con URL temporal, pero no es el flujo programado adoptado finalmente. El diagrama anterior no debe usarse como evidencia del mecanismo automático sin explicar esta diferencia. La representación nueva es un resumen; la configuración detallada está en los módulos Terraform y los registros de prueba.
+## Inventario de Diagramas Independientes
 
-El endpoint público de Blob está habilitado con reglas de red de denegación predeterminada y dos IP NAT permitidas; no describir la cuenta como exclusivamente privada. La SAS vence el 19/12/2026 a las 19:00 en Lima. La aceptación de Azure como alternativa a OCI depende del docente.
+| Archivo | Figura en Informe | Descripción y Alcance |
+| --- | --- | --- |
+| [Arquitectura_general.png](Arquitectura_general.png) | **Figura 1** | **Arquitectura lógica general multicloud:** Vista conceptual de alto nivel que ilustra la interacción entre clientes, DNS, AWS (capas web, app, datos) y Microsoft Azure (contingencia). |
+| [Arquitectura_AWS.png](Arquitectura_AWS.png) | **Figura 2** | **Arquitectura AWS V3 implementada:** Despliegue en `us-east-1`, Application Load Balancer público con HTTPS (ACM), Auto Scaling Group con EC2 privadas en dos AZs (`us-east-1a` y `us-east-1b`), RDS PostgreSQL Multi-AZ, buckets S3 privados, colas SQS, funciones Lambda y CloudWatch. |
+| [Arquitectura_Azure_implementada.png](Arquitectura_Azure_implementada.png) | **Figura 3** | **Arquitectura de integración Microsoft Azure:** VNet (`10.20.0.0/16`), subredes privadas en `South Central US`, Private Endpoint para Blob Storage, NAT Gateway, Azure Monitor con Log Analytics y VM ARM64 (`Standard_B2pts_v2`) con identidad administrada. |
+| [Arquitectura_multicloud_implementada_2026-11-20.png](Arquitectura_multicloud_implementada_2026-11-20.png) | **Figura 4** | **Arquitectura empresarial multicloud integral:** Flujo físico y operativo definitivo verificado el 20/11/2026. Detalla la extracción PostgreSQL $\rightarrow$ S3 $\rightarrow$ EC2 $\rightarrow$ Azure Blob vía HTTPS protegida con SAS y firewall de IPs NAT elásticas de AWS. |
+| [Arquitectura_multicloud_implementada_2026-11-20.svg](Arquitectura_multicloud_implementada_2026-11-20.svg) | Figura 4 (Vectorial) | Versión vectorial SVG de alta definición generada automáticamente por código. |
+| [generar_diagrama.py](generar_diagrama.py) | Herramienta | Script en Python (`matplotlib`) que genera programáticamente los diagramas PNG y SVG de la arquitectura multicloud. |
+| [Wimiline_Arquitectura_V3_implementada.html](Wimiline_Arquitectura_V3_implementada.html) | Histórico | Visor interactivo preliminar conservado como trazabilidad de diseño. |
 
-El flujo actual también copia el paquete de aplicación a Azure Blob por una ruta identificada por SHA-256. Cada nuevo respaldo incluye una huella que vincula la versión instalada con el paquete. La recuperación aislada desde Azure se validó para datos y aplicación; DNS/TLS productivos no se conmutaron.
+## Notas Técnicas sobre la Implementación
+
+1. **Flujo Efectivo de Respaldo:** El diseño definitivo ejecuta el respaldo desde las instancias EC2 en AWS enviando los volcados y el paquete de aplicación (`multiverso-release.zip`, identificado por SHA-256) hacia Azure Blob Storage a través de HTTPS. La cuenta de almacenamiento en Azure deniega todo tráfico público excepto las IPs públicas fijas de salida del NAT Gateway de AWS (`35.172.14.7` y `100.48.128.175`) y exige un token SAS de escritura temporal.
+2. **Acceso Privado en Azure:** La máquina virtual de Azure (`Standard_B2pts_v2`) accede al contenedor de Blob mediante Private Endpoint (`10.20.3.0/24`) y resolución DNS privada, autenticada mediante identidad administrada con rol de colaborador de datos.
+3. **Vigencia del Token SAS:** La SAS operativa vence el **19/12/2026 a las 19:00 hora de Lima (20/12/2026 00:00 UTC)**. Su renovación se gestiona mediante Terraform en Azure y se sincroniza en Parameter Store de AWS.
