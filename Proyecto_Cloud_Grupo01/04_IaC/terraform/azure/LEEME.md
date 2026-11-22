@@ -17,7 +17,7 @@ Esta carpeta contiene la configuración completa de Infraestructura como Código
 
 | Archivo | Propósito |
 | --- | --- |
-| [main.tf](main.tf) | Configuración del proveedor `azurerm` y definición del Resource Group principal (`rg-wimiline-integracion`). |
+| [main.tf](main.tf) | Configuración del proveedor `azurerm` y definición del Resource Group principal (`rg-wimiline-multicloud`). |
 | [integracion.tf](integracion.tf) | VNet (`10.20.0.0/16`), subredes (`snet-integracion`, `snet-private-endpoint`), NSGs, NAT Gateway e IP pública estática. |
 | [respaldo_desde_aws.tf](respaldo_desde_aws.tf) | Storage Account, contenedor privado `respaldos-multicloud`, Private Endpoint con DNS privado, firewall de IPs NAT y token SAS de escritura. |
 | [herramientas.tf](herramientas.tf) | Aprovisionamiento de la VM ARM64 (`Standard_B2pts_v2`) con identidad administrada asignada por el sistema y herramientas de restauración (AzCopy, AWS CLI ARM64). |

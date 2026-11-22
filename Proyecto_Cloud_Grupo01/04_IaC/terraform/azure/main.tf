@@ -1,4 +1,4 @@
-# Propuesta de almacenamiento privado. No configura todavía ninguna copia desde AWS.
+# Infraestructura de almacenamiento y contingencia multicloud en Azure (configurada para recibir respaldos desde AWS).
 resource "azurerm_resource_group" "wimiline" {
   name     = var.resource_group_name
   location = var.resource_group_location

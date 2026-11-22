@@ -1,0 +1,13 @@
+# Configuración de variables de ejemplo para AWS — Wimiline (Entregable 3)
+# Copia este archivo como terraform.tfvars para personalizar valores locales.
+# NO incluyas contraseñas reales ni credenciales sensibles en este archivo.
+
+domain       = "multiverso.wimiline.com"
+enable_https = true
+alert_email  = "wimiline.info@gmail.com"
+
+# AMI Ubuntu 24.04 x86_64 validada en us-east-1
+ami_id = "ami-0109d2b556bd3d7e1"
+
+# Integración con Azure para réplica de respaldos
+habilitar_respaldo_azure = true

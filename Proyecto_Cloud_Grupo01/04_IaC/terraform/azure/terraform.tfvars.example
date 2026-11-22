@@ -1,0 +1,24 @@
+# Configuración de variables de ejemplo para Azure — Wimiline (Entregable 3)
+# Copia este archivo como terraform.tfvars para personalizar valores locales.
+# NUNCA compartas tu subscription_id real ni tokens SAS en repositorios públicos.
+
+# ID de la suscripción de Azure for Students (ejemplo seguro)
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+# Ubicación y Grupo de Recursos
+location                = "southcentralus"
+resource_group_name     = "rg-wimiline-multicloud"
+resource_group_location = "eastus"
+
+# Habilitar recepción de respaldos desde AWS
+habilitar_respaldo_desde_aws = true
+
+# IPs elásticas del NAT Gateway de AWS autorizadas en el firewall
+ips_nat_aws = [
+  "35.172.14.7",
+  "100.48.128.175"
+]
+
+# Vigencia programada de la SAS de escritura (formato ISO 8601 UTC)
+sas_inicio      = "2026-11-20T00:00:00Z"
+sas_vencimiento = "2026-12-20T00:00:00Z"
