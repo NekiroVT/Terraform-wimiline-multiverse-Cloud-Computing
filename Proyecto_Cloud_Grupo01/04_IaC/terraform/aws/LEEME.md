@@ -7,7 +7,7 @@ Reconstrucción implementada y validada el 20/11/2026 en AWS Academy, región `u
 Desde esta carpeta ejecutar `terraform init`, `terraform plan` y, después de revisar, `terraform apply`.
 - **Certificado ACM:** El certificado TLS/ACM del dominio está validado y asociado al ALB HTTPS (puerto 443 con redirección forzada desde HTTP 80).
 - **AMI Ubuntu:** Fijada en `ami_id` para garantizar inmutabilidad y predictibilidad en los planes de despliegue.
-- **Paquete de Aplicación:** Se utiliza `multiverso-release-v3.zip` ubicado en esta carpeta, que contiene los binarios compilados de la API Spring Boot (`app.jar`) y el bundle empaquetado del frontend web.
+- **Paquete de Aplicación:** Se utiliza `multiverso-release-v3.zip` ubicado en esta carpeta, que contiene los binarios compilados de la API Spring Boot (`app.jar`) y el bundle empaquetado del frontend web. Su integridad y ausencia de secretos embebidos está formalmente auditada en [INSPECCION_SEGURIDAD_RELEASE.md](INSPECCION_SEGURIDAD_RELEASE.md).
 - **Secretos:** Las credenciales de base de datos PostgreSQL y llaves JWT se gestionan mediante AWS Systems Manager (SSM) Parameter Store.
 
 ## Particularidad AWS Academy y S3
