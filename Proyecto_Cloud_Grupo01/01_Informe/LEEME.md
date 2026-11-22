@@ -1,61 +1,48 @@
-# 01_Informe — Entregable 3 final de Wimiline
+# 01_Informe · Entregable 3 de Wimiline
 
+**Proyecto:** Arquitectura multicloud AWS + Microsoft Azure para Wimiline E.I.R.L.  
 **Curso:** Cloud Computing · Universidad Peruana Unión  
-**Proyecto:** Diseño e implementación de una arquitectura multicloud empresarial con AWS y Microsoft Azure para Wimiline E.I.R.L.  
 **Aplicación:** [Multiverso](https://multiverso.wimiline.com/)  
-**Repositorio:** [Terraform-wimiline-multiverse-Cloud-Computing](https://github.com/NekiroVT/Terraform-wimiline-multiverse-Cloud-Computing)
+**Repositorio técnico:** [Terraform-wimiline-multiverse-Cloud-Computing](https://github.com/NekiroVT/Terraform-wimiline-multiverse-Cloud-Computing)
 
-## ¿Qué es esta carpeta?
+## Archivos de esta carpeta
 
-Contiene **el informe final del Entregable 3**. El Word y el PDF son **dos formatos del mismo informe**, no proyectos diferentes. `Proyecto_Final.pdf` es el nombre de archivo solicitado por la plantilla del curso.
-
-## Archivos
-
-| Archivo | Función |
+| Archivo | Contenido |
 | --- | --- |
-| [`Proyecto_Final.pdf`](Proyecto_Final.pdf) | **Informe final en PDF**, listo para evaluación. Contiene 52 páginas, las secciones técnicas y los anexos A–J. |
-| [`Entregable_3_Final_Wimiline_V12.docx`](Entregable_3_Final_Wimiline_V12.docx) | El **mismo informe en Word editable**, revisión V12 con correcciones de índice y estado de GitHub. |
-| `LEEME.md` | Esta guía de consulta y trazabilidad del informe. |
+| [Entregable_3_Final_Wimiline_V13.docx](Entregable_3_Final_Wimiline_V13.docx) | Informe final del Entregable 3 en Word editable. |
+| [Proyecto_Final.pdf](Proyecto_Final.pdf) | El **mismo informe** en PDF (52 páginas), con las secciones 2–27 y anexos A–J. |
+| [LEEME.md](LEEME.md) | Índice de consulta del informe y orientación hacia los demás archivos del proyecto. |
+
+El archivo Word y el PDF **no son dos informes diferentes**. Son dos formatos del mismo Entregable 3. La denominación `Proyecto_Final.pdf` corresponde al nombre previsto para el informe final dentro de la estructura del curso.
 
 ## Contenido del informe
 
-- **Secciones 2–8:** resumen, empresa, problemática, requerimientos y arquitectura cloud.
-- **Secciones 9–13:** redes AWS/Azure, cómputo, almacenamiento, base de datos y seguridad.
-- **Secciones 14–18:** alta disponibilidad, balanceo, escalabilidad, monitoreo y Terraform.
-- **Secciones 19–23:** RTO/RPO, respaldos, recuperación, integración multicloud, costos, pruebas y resultados.
-- **Secciones 24–27:** conclusiones, recomendaciones, referencias y **anexos A–J**.
+- **2–8:** resumen, empresa, problemática, requerimientos, modelos cloud y arquitectura.
+- **9–13:** redes, direccionamiento, cómputo, almacenamiento, PostgreSQL y seguridad.
+- **14–18:** alta disponibilidad, balanceo, escalabilidad, monitoreo y Terraform.
+- **19–23:** continuidad del negocio, RTO/RPO, recuperación, costos, pruebas y resultados.
+- **24–27:** conclusiones, recomendaciones, referencias y anexos oficiales A–J.
 
-Las cifras y resultados técnicos se presentan con el alcance y las limitaciones registrados en el propio informe. El PDF no acredita por sí solo el estado actual de los servicios en la nube.
+El informe conserva los resultados de las pruebas registradas. No afirma que su edición equivalga a ejecutar nuevas validaciones sobre AWS o Azure.
 
-## Documentación técnica complementaria
+## Relación con el expediente digital
 
-Los archivos originales del proyecto se organizan en las otras carpetas del mismo repositorio:
-
-| Carpeta | Contenido relacionado |
+| Carpeta | Material complementario |
 | --- | --- |
-| [`02_Arquitectura`](../02_Arquitectura/) | Diagramas e imágenes de la arquitectura AWS–Azure. |
-| [`03_Redes`](../03_Redes/) | Direccionamiento IP, rutas y segmentación. |
-| [`04_IaC`](../04_IaC/) | Código Terraform real de AWS y Azure, scripts y guías de operación. |
-| [`05_Seguridad`](../05_Seguridad/) | Controles y restricciones de seguridad. |
-| [`06_Pruebas`](../06_Pruebas/) | Evidencias, capturas y registros de ejecución. |
-| [`07_Monitoreo`](../07_Monitoreo/) | Métricas, dashboards, alarmas y notificaciones documentadas. |
-| [`08_Backup_DR`](../08_Backup_DR/) | Procedimiento de respaldo y recuperación. |
-| [`09_Costos`](../09_Costos/) | Estimación de gastos y control presupuestario. |
-| [`10_Presentacion`](../10_Presentacion/) | Material de exposición y guías. |
+| [02_Arquitectura](../02_Arquitectura/) | Arquitecturas AWS, Azure e integración multicloud. |
+| [03_Redes](../03_Redes/) | Direccionamiento, rutas y segmentación. |
+| [04_IaC](../04_IaC/) | Configuración Terraform para AWS y Azure, scripts y guías. |
+| [05_Seguridad](../05_Seguridad/) | Seguridad y restricciones de cuentas académicas. |
+| [06_Pruebas](../06_Pruebas/) | Registros, evidencias y capturas de los ensayos. |
+| [07_Monitoreo](../07_Monitoreo/) | Monitoreo de AWS y Azure, alarmas y notificaciones. |
+| [08_Backup_DR](../08_Backup_DR/) | Respaldos, integridad y recuperación ante desastres. |
+| [09_Costos](../09_Costos/) | Estimaciones económicas y controles de consumo. |
+| [10_Presentacion](../10_Presentacion/) | Material para la explicación técnica. |
 
-## Cómo incorporar esta carpeta a GitHub
+## Criterio de versiones y revisión
 
-1. Extraer el ZIP del paquete en tu equipo.
-2. Abrir `Proyecto_Cloud_Grupo01/01_Informe/` dentro del repositorio.
-3. Subir **los tres archivos** de esta carpeta, no el ZIP completo dentro de `01_Informe`.
-4. Confirmar los cambios con **Commit changes**.
-5. Abrir los enlaces del PDF y del Word en GitHub para comprobar que la carga terminó correctamente.
+Esta guía describe **el contenido del paquete documental V13** y usa enlaces relativos, válidos al conservar juntos los tres archivos en `01_Informe`. No depende de un número de commit ni de afirmar si la publicación remota se produjo antes o después de preparar el documento.
 
-**Importante:** este `LEEME.md` no afirma que los archivos ya estuvieran publicados. Su disponibilidad en GitHub solo queda confirmada después de efectuar el commit. El archivo `.gitkeep`, si todavía está presente, es únicamente un marcador de carpeta.
+El repositorio proporciona código y evidencias, pero no concede acceso automático a AWS Academy ni a Azure for Students. Los accesos autorizados y el video explicativo de 5–10 minutos se presentan aparte de este informe.
 
-## Seguridad y revisión
-
-No compartir contraseñas, claves SSH privadas, SAS, tokens de sesión, estados `terraform.tfstate`, carpetas `.terraform/` ni variables privadas. La revisión de recursos de AWS Academy y Azure for Students debe utilizar los mecanismos autorizados por cada plataforma; el informe no concede permisos de acceso automáticamente.
-
-**Fecha de preparación del informe:** 22 de noviembre de 2026.  
-**Formato oficial de entrega del informe:** PDF; Word añadido como versión editable.
+**Seguridad:** no incluir contraseñas personales, credenciales de laboratorio, tokens, SAS, claves privadas, `.tfstate`, `.tfvars` con secretos ni la carpeta `.terraform/`.
