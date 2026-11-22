@@ -1,0 +1,13 @@
+{
+  "inicio_utc": "2026-11-20T21:39:04.427669+00:00",
+  "escenario": "VM Azure aislada: restaura base y artefacto vinculados exclusivamente desde Blob, por HTTP restringido; no mide DNS ni HTTPS de producción",
+  "backup_id": "20261120T203325Z-ip-10-10-4-253",
+  "final_utc": "2026-11-20T21:43:32.594620+00:00",
+  "segundos": 268.2,
+  "frontend_http": 200,
+  "api_http": 200,
+  "registro_http": 200,
+  "login_http": 200,
+  "artefacto_y_datos": "Azure Blob; verificaciones SHA-256 durante restauración",
+  "dns_tls": "HTTP restringido; DNS y TLS productivos no conmutados"
+}

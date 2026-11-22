@@ -1,0 +1,11 @@
+{
+  "fecha_lima": "2026-11-21T01:33:11.843148-05:00",
+  "correo_alias_prueba": "wimiline.info+v7test1795242791@gmail.com",
+  "registro_http": 200,
+  "login_http": 200,
+  "login_token_presente": true,
+  "correo_usuario_confirmo": true,
+  "smtp_aceptado_utc": "2026-11-21T06:33:26.921Z",
+  "usuario_temporal_eliminado": 1,
+  "confirmacion_observacion": "Confirmación del propietario por chat; no captura directa de Gmail."
+}

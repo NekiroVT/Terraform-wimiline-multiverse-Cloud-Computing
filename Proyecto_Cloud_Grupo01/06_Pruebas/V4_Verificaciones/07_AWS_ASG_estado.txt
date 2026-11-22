@@ -1,0 +1,12 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: aws autoscaling describe-auto-scaling-groups --region us-east-1 --auto-scaling-group-names wimiline-app-asg --query AutoScalingGroups[].[AutoScalingGroupName,MinSize,DesiredCapacity,MaxSize,Instances[].LifecycleState] --output json
+Código: 0
+[
+    [
+        "wimiline-app-asg",
+        2,
+        2,
+        4,
+        []
+    ]
+]

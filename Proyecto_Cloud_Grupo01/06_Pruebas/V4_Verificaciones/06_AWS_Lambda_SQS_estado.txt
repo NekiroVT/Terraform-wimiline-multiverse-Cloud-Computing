@@ -1,0 +1,9 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: aws lambda list-event-source-mappings --region us-east-1 --function-name wimiline-correo-bienvenida --query EventSourceMappings[].[State,StateTransitionReason] --output json
+Código: 0
+[
+    [
+        "Disabled",
+        "USER_INITIATED"
+    ]
+]

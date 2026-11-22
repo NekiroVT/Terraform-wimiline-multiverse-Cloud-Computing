@@ -1,0 +1,12 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: aws iam list-attached-role-policies --role-name LabRole --query AttachedPolicies[].PolicyName --output json
+Código: 0
+[
+    "c237389a5957093l18552874t1w339712696217-VocLabPolicy1-5LmAbEmRQLkz",
+    "c237389a5957093l18552874t1w339712696217-VocLabPolicy2-4Bcrw1DBPWMq",
+    "c237389a5957093l18552874t1w339712696217-VocLabPolicy3-R7YSh6SDkk76",
+    "AmazonSSMManagedInstanceCore",
+    "AmazonEKSClusterPolicy",
+    "AmazonEC2ContainerRegistryReadOnly",
+    "AmazonEKSWorkerNodePolicy"
+]

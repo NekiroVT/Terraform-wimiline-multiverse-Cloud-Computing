@@ -1,0 +1,8 @@
+Consulta pg_stat_activity y pg_stat_ssl. Verificado 21/11/2026 01:11:52 hora de Lima
+    application_name    | client_addr | ssl | version |         cipher         | state  
+------------------------+-------------+-----+---------+------------------------+--------
+ PostgreSQL JDBC Driver | 10.10.3.246 | t   | TLSv1.3 | TLS_AES_256_GCM_SHA384 | idle
+ psql                   | 10.10.3.246 | t   | TLSv1.3 | TLS_AES_256_GCM_SHA384 | active
+ PostgreSQL JDBC Driver | 10.10.4.201 | t   | TLSv1.3 | TLS_AES_256_GCM_SHA384 | idle
+(3 rows)
+

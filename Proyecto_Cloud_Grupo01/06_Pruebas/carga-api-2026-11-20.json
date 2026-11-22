@@ -1,0 +1,11 @@
+{
+  "date_utc": "2026-11-20T07:31:57.896067+00:00",
+  "url": "https://multiverso.wimiline.com/api/public/status",
+  "requests": 100,
+  "concurrency": 10,
+  "status_200": 100,
+  "errors": 0,
+  "elapsed_seconds": 3.3,
+  "latency_p95_ms": 537.8,
+  "scope": "Prueba breve; no demuestra capacidad máxima ni escalado automático."
+}

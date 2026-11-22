@@ -1,0 +1,15 @@
+{
+  "estado": "web_y_api_responden",
+  "inicio_utc": "2026-11-20T19:23:01.529884+00:00",
+  "escenario": "recuperacion aislada en nueva VM Azure, acceso HTTP restringido a IP de prueba; no reproduce DNS/TLS productivos",
+  "web_http": 200,
+  "api_http": 200,
+  "primera_respuesta_utc": "2026-11-20T19:30:27.515203+00:00",
+  "rto_parcial_segundos": 446.0,
+  "backup_id": "20261120T191712Z-ip-10-10-4-253",
+  "registro_http": 200,
+  "login_http": 200,
+  "validacion_funcional_utc": "2026-11-20T19:32:22.819597+00:00",
+  "rto_hasta_login_segundos": 561.3,
+  "nota": "Ensayo HTTP aislado limitado por IP; incluye demoras de verificación; no incluye DNS/TLS productivos ni conmutación real."
+}

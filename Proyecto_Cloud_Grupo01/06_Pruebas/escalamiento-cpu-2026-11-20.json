@@ -1,0 +1,493 @@
+{
+  "metodo": "Carga CPU sintetica acotada en dos instancias mediante SSM; sondeo periodico de estado del ASG y API.",
+  "observaciones": [
+    {
+      "timestamp_utc": "2026-11-20T11:34:10.795475+00:00",
+      "seconds": 1,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:34:32.140221+00:00",
+      "seconds": 23,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:34:53.535094+00:00",
+      "seconds": 44,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:35:15.022903+00:00",
+      "seconds": 66,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:35:36.354392+00:00",
+      "seconds": 87,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:35:57.754779+00:00",
+      "seconds": 108,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-07b62ec718a2cbac4",
+            "state": "Terminating"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:36:19.236063+00:00",
+      "seconds": 130,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:36:40.528634+00:00",
+      "seconds": 151,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:37:01.830266+00:00",
+      "seconds": 173,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:37:23.226506+00:00",
+      "seconds": 194,
+      "asg": {
+        "desired": 2,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:37:44.616646+00:00",
+      "seconds": 215,
+      "asg": {
+        "desired": 3,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:38:05.924365+00:00",
+      "seconds": 237,
+      "asg": {
+        "desired": 3,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:38:27.350999+00:00",
+      "seconds": 258,
+      "asg": {
+        "desired": 3,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:38:48.711980+00:00",
+      "seconds": 279,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:39:10.092619+00:00",
+      "seconds": 301,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:39:31.500416+00:00",
+      "seconds": 322,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:39:52.829511+00:00",
+      "seconds": 344,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:40:14.217292+00:00",
+      "seconds": 365,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:40:35.674751+00:00",
+      "seconds": 386,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    },
+    {
+      "timestamp_utc": "2026-11-20T11:40:56.928060+00:00",
+      "seconds": 408,
+      "asg": {
+        "desired": 4,
+        "min": 2,
+        "max": 4,
+        "instances": [
+          {
+            "id": "i-032958fd27333398d",
+            "state": "InService"
+          },
+          {
+            "id": "i-08a9fc915e45cc5cf",
+            "state": "InService"
+          },
+          {
+            "id": "i-0ef807dfbb55dcc32",
+            "state": "InService"
+          },
+          {
+            "id": "i-0f891ff18f8012c4a",
+            "state": "InService"
+          }
+        ]
+      },
+      "http": 200
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "fecha_consulta": "20/11/2026 22:51:09 hora de Lima",
+  "fuente": "https://prices.azure.com/api/retail/prices",
+  "region": "southcentralus",
+  "sku": "Standard_B2pts_v2",
+  "sistema": "Linux",
+  "modalidad": "Consumption",
+  "usd_por_hora": 0.0101,
+  "horas_continuo": 730,
+  "horas_ensayo": 240,
+  "ahorro_horas": 490,
+  "costo_computo_730h_usd": 7.373,
+  "costo_computo_240h_usd": 2.424,
+  "ahorro_computo_usd": 4.949,
+  "nota": "Estimacion publica, excluye descuentos, creditos, NAT, almacenamiento, IP, transferencia y otros cargos; requiere desasignar la VM."
+}

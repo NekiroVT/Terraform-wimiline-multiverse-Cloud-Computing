@@ -1,0 +1,8 @@
+AWS terraform validate -no-color
+Success! The configuration is valid.
+
+
+AWS terraform plan -no-color -detailed-exitcode -input=false -lock=false
+Código: 0
+No changes. Your infrastructure matches the configuration.
+Salida filtrada: no incluye valores sensibles.

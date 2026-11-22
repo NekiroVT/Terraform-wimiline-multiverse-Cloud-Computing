@@ -1,0 +1,11 @@
+{
+  "escenario": "Fallo intencional en copia temporal del script, insertado después de instalar el manejador de error; no modifica backups reales",
+  "ssm_command_id": "3a0892f3-879e-4098-91c5-051b43fa7fc1",
+  "ssm_resultado": "FALLO_SIMULADO_DETECTADO",
+  "metrica": "Wimiline/Backup CopyFailure = 1",
+  "alarma": "wimiline-respaldo-azure-error",
+  "estado_observado": "ALARM",
+  "recepcion_correo": "confirmada por el usuario",
+  "cierre_ensayo": "Se publicó un punto sintético CopyFailure=0 para cerrar la prueba; la alarma suma fallos, por lo que un fallo real en el mismo periodo mantiene la condición.",
+  "estado_final": "OK tras el punto sintético de cierre"
+}

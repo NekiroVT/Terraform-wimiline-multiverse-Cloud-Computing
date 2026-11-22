@@ -1,0 +1,387 @@
+{
+  "fecha_utc": "2026-11-20T11:31:42.386881+00:00",
+  "accion": "Sustitución controlada de una instancia por Auto Scaling sin reducir capacidad deseada",
+  "instancia_terminada": "i-07b62ec718a2cbac4",
+  "duracion_s": 75.0,
+  "peticiones": 75,
+  "http_200": 75,
+  "otros": 0,
+  "mediciones": [
+    {
+      "seconds": 0.42,
+      "status": 200,
+      "latency_ms": 416.9
+    },
+    {
+      "seconds": 1.32,
+      "status": 200,
+      "latency_ms": 316.5
+    },
+    {
+      "seconds": 2.32,
+      "status": 200,
+      "latency_ms": 318.9
+    },
+    {
+      "seconds": 3.31,
+      "status": 200,
+      "latency_ms": 311.0
+    },
+    {
+      "seconds": 4.3,
+      "status": 200,
+      "latency_ms": 300.8
+    },
+    {
+      "seconds": 5.31,
+      "status": 200,
+      "latency_ms": 311.4
+    },
+    {
+      "seconds": 6.31,
+      "status": 200,
+      "latency_ms": 304.0
+    },
+    {
+      "seconds": 7.32,
+      "status": 200,
+      "latency_ms": 315.7
+    },
+    {
+      "seconds": 8.32,
+      "status": 200,
+      "latency_ms": 313.6
+    },
+    {
+      "seconds": 9.3,
+      "status": 200,
+      "latency_ms": 295.9
+    },
+    {
+      "seconds": 10.32,
+      "status": 200,
+      "latency_ms": 315.0
+    },
+    {
+      "seconds": 11.33,
+      "status": 200,
+      "latency_ms": 323.0
+    },
+    {
+      "seconds": 12.33,
+      "status": 200,
+      "latency_ms": 326.5
+    },
+    {
+      "seconds": 13.3,
+      "status": 200,
+      "latency_ms": 296.1
+    },
+    {
+      "seconds": 14.34,
+      "status": 200,
+      "latency_ms": 334.5
+    },
+    {
+      "seconds": 15.32,
+      "status": 200,
+      "latency_ms": 313.0
+    },
+    {
+      "seconds": 16.33,
+      "status": 200,
+      "latency_ms": 326.6
+    },
+    {
+      "seconds": 17.33,
+      "status": 200,
+      "latency_ms": 324.3
+    },
+    {
+      "seconds": 18.3,
+      "status": 200,
+      "latency_ms": 294.3
+    },
+    {
+      "seconds": 19.31,
+      "status": 200,
+      "latency_ms": 299.0
+    },
+    {
+      "seconds": 20.31,
+      "status": 200,
+      "latency_ms": 301.8
+    },
+    {
+      "seconds": 21.33,
+      "status": 200,
+      "latency_ms": 322.9
+    },
+    {
+      "seconds": 22.31,
+      "status": 200,
+      "latency_ms": 298.1
+    },
+    {
+      "seconds": 23.31,
+      "status": 200,
+      "latency_ms": 301.9
+    },
+    {
+      "seconds": 24.34,
+      "status": 200,
+      "latency_ms": 333.8
+    },
+    {
+      "seconds": 25.33,
+      "status": 200,
+      "latency_ms": 319.0
+    },
+    {
+      "seconds": 26.35,
+      "status": 200,
+      "latency_ms": 333.5
+    },
+    {
+      "seconds": 27.33,
+      "status": 200,
+      "latency_ms": 323.1
+    },
+    {
+      "seconds": 28.33,
+      "status": 200,
+      "latency_ms": 321.5
+    },
+    {
+      "seconds": 29.31,
+      "status": 200,
+      "latency_ms": 300.8
+    },
+    {
+      "seconds": 30.32,
+      "status": 200,
+      "latency_ms": 305.2
+    },
+    {
+      "seconds": 31.34,
+      "status": 200,
+      "latency_ms": 329.7
+    },
+    {
+      "seconds": 32.31,
+      "status": 200,
+      "latency_ms": 300.1
+    },
+    {
+      "seconds": 33.32,
+      "status": 200,
+      "latency_ms": 304.2
+    },
+    {
+      "seconds": 34.31,
+      "status": 200,
+      "latency_ms": 290.8
+    },
+    {
+      "seconds": 35.32,
+      "status": 200,
+      "latency_ms": 309.2
+    },
+    {
+      "seconds": 36.32,
+      "status": 200,
+      "latency_ms": 302.5
+    },
+    {
+      "seconds": 37.33,
+      "status": 200,
+      "latency_ms": 316.6
+    },
+    {
+      "seconds": 38.34,
+      "status": 200,
+      "latency_ms": 319.1
+    },
+    {
+      "seconds": 39.33,
+      "status": 200,
+      "latency_ms": 308.4
+    },
+    {
+      "seconds": 40.33,
+      "status": 200,
+      "latency_ms": 309.5
+    },
+    {
+      "seconds": 41.32,
+      "status": 200,
+      "latency_ms": 306.0
+    },
+    {
+      "seconds": 42.33,
+      "status": 200,
+      "latency_ms": 308.1
+    },
+    {
+      "seconds": 43.33,
+      "status": 200,
+      "latency_ms": 311.7
+    },
+    {
+      "seconds": 44.34,
+      "status": 200,
+      "latency_ms": 321.9
+    },
+    {
+      "seconds": 45.32,
+      "status": 200,
+      "latency_ms": 302.5
+    },
+    {
+      "seconds": 46.32,
+      "status": 200,
+      "latency_ms": 304.7
+    },
+    {
+      "seconds": 47.32,
+      "status": 200,
+      "latency_ms": 300.8
+    },
+    {
+      "seconds": 48.34,
+      "status": 200,
+      "latency_ms": 323.1
+    },
+    {
+      "seconds": 49.33,
+      "status": 200,
+      "latency_ms": 308.2
+    },
+    {
+      "seconds": 50.33,
+      "status": 200,
+      "latency_ms": 303.5
+    },
+    {
+      "seconds": 51.31,
+      "status": 200,
+      "latency_ms": 292.5
+    },
+    {
+      "seconds": 52.33,
+      "status": 200,
+      "latency_ms": 309.0
+    },
+    {
+      "seconds": 53.35,
+      "status": 200,
+      "latency_ms": 327.9
+    },
+    {
+      "seconds": 54.35,
+      "status": 200,
+      "latency_ms": 321.5
+    },
+    {
+      "seconds": 55.34,
+      "status": 200,
+      "latency_ms": 320.2
+    },
+    {
+      "seconds": 56.36,
+      "status": 200,
+      "latency_ms": 339.1
+    },
+    {
+      "seconds": 57.34,
+      "status": 200,
+      "latency_ms": 315.8
+    },
+    {
+      "seconds": 58.33,
+      "status": 200,
+      "latency_ms": 302.8
+    },
+    {
+      "seconds": 59.34,
+      "status": 200,
+      "latency_ms": 313.5
+    },
+    {
+      "seconds": 60.48,
+      "status": 200,
+      "latency_ms": 456.2
+    },
+    {
+      "seconds": 61.34,
+      "status": 200,
+      "latency_ms": 316.3
+    },
+    {
+      "seconds": 62.35,
+      "status": 200,
+      "latency_ms": 326.2
+    },
+    {
+      "seconds": 63.35,
+      "status": 200,
+      "latency_ms": 326.3
+    },
+    {
+      "seconds": 64.32,
+      "status": 200,
+      "latency_ms": 294.1
+    },
+    {
+      "seconds": 65.33,
+      "status": 200,
+      "latency_ms": 304.4
+    },
+    {
+      "seconds": 66.34,
+      "status": 200,
+      "latency_ms": 312.3
+    },
+    {
+      "seconds": 67.35,
+      "status": 200,
+      "latency_ms": 319.9
+    },
+    {
+      "seconds": 68.34,
+      "status": 200,
+      "latency_ms": 306.2
+    },
+    {
+      "seconds": 69.34,
+      "status": 200,
+      "latency_ms": 304.2
+    },
+    {
+      "seconds": 70.33,
+      "status": 200,
+      "latency_ms": 294.0
+    },
+    {
+      "seconds": 71.35,
+      "status": 200,
+      "latency_ms": 313.6
+    },
+    {
+      "seconds": 72.35,
+      "status": 200,
+      "latency_ms": 322.7
+    },
+    {
+      "seconds": 73.36,
+      "status": 200,
+      "latency_ms": 328.4
+    },
+    {
+      "seconds": 74.35,
+      "status": 200,
+      "latency_ms": 317.9
+    }
+  ],
+  "alcance": "Sondeos una vez por segundo; no demuestra ausencia absoluta de interrupciones ni restaura la aplicación desde backup."
+}

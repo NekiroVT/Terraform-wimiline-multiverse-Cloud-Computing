@@ -1,0 +1,29 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+crash.log
+crash.*.log
+
+# Credenciales
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+.env
+.env.*
+!.env.example
+.aws/
+id_rsa
+id_ed25519
+
+# Archivos temporales
+*.log
+.DS_Store
+Thumbs.db
+
+.build/

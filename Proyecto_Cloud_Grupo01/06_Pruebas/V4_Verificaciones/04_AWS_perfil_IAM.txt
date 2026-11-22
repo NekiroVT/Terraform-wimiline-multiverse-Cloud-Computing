@@ -1,0 +1,9 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: aws iam get-instance-profile --instance-profile-name LabInstanceProfile --query InstanceProfile.{Name:InstanceProfileName,Roles:Roles[].RoleName} --output json
+Código: 0
+{
+    "Name": "LabInstanceProfile",
+    "Roles": [
+        "LabRole"
+    ]
+}

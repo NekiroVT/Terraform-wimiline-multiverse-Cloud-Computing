@@ -1,0 +1,12 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Directorio: D:\CódigosNK-Poyectos\Cloud computing Entregables\Entregable 3 Final\04_IaC\terraform\aws
+Comando: terraform validate -no-color
+Success! The configuration is valid.
+
+
+Comando: terraform plan -no-color -detailed-exitcode -input=false -lock=false
+Código de salida: 2 (0 sin cambios, 2 con cambios, 1 error)
+# aws_lambda_event_source_mapping.registration will be updated in-place
+Plan: 0 to add, 1 to change, 0 to destroy.
+aws_lambda_event_source_mapping.registration: enabled false -> true
+Nota: resumen filtrado para evitar exposición de secretos; no se ejecutó apply.

@@ -1,0 +1,8 @@
+{
+  "operacion": "dos cargas de contenido sintético a la misma ruta",
+  "sha256": "acc25a7f6a85c33f6098b00537991b5a005ff2a848def3b53cd46bf7d42b8582",
+  "lectura_vm_privada": "SHA-256 correcto",
+  "solicitud_publica_no_autorizada": 403,
+  "objeto_sintetico": "eliminado",
+  "alcance": "un objeto vigente; no evalúa versiones históricas"
+}

@@ -1,0 +1,15 @@
+{
+  "inicio_utc": "2026-11-20T19:49:17.304227+00:00",
+  "escenario": "ensayo aislado HTTPS para dominio real con resolucion local forzada; sin modificar DNS productivo; emision previa del certificado excluida",
+  "backup_id": "20261120T191712Z-ip-10-10-4-253",
+  "primera_respuesta_utc": "2026-11-20T19:54:54.443509+00:00",
+  "web_https": 200,
+  "api_https": 200,
+  "tls_certificado": "verificado contra CA pública y nombre multiverso.wimiline.com",
+  "segundos_hasta_web_api": 337.1,
+  "registro_https": 200,
+  "login_https": 200,
+  "validacion_funcional_utc": "2026-11-20T19:54:56.044489+00:00",
+  "segundos_hasta_login": 338.7,
+  "ip_de_prueba": "172.202.197.53"
+}

@@ -1,0 +1,2 @@
+Verificado 21/11/2026 01:11:52 hora de Lima
+Prueba SQS sintética: mensaje ad4c6b47-c0db-4cd4-9400-6f0d27b9b35e; CloudWatch: Synthetic test event acknowledged, 2026-11-21T06:09:28.424Z. Destinatario reservado .invalid; no genera correo. Verificación independiente de autenticación SMTP: {"smtp_auth":"ok"}. No demuestra entrega a bandeja.

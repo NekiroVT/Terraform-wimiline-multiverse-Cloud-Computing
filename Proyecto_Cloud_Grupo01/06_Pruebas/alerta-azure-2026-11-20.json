@@ -1,0 +1,8 @@
+{
+  "regla": "ensayo-wimiline-alerta-temporal",
+  "estado": "Fired",
+  "inicio_utc": "2026-11-20T20:04:17Z",
+  "recepcion_correo": "confirmada por el usuario",
+  "test_action_group": "Conflict: Free subscription not supported",
+  "eliminacion": "Terraform: plan de eliminación del recurso temporal"
+}

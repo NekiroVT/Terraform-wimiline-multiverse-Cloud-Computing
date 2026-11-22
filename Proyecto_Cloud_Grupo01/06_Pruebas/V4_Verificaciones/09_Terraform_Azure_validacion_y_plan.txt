@@ -1,0 +1,25 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Directorio: D:\CódigosNK-Poyectos\Cloud computing Entregables\Entregable 3 Final\04_IaC\terraform\azure
+Comando: terraform validate -no-color
+
+Warning: Deprecated value used
+
+  with azurerm_role_assignment.rto_test_blob,
+  on ensayo_rto.tf line 87, in resource "azurerm_role_assignment" "rto_test_blob":
+  87:   scope                = azurerm_storage_container.backup.resource_manager_id
+
+  The deprecation originates from azurerm_storage_container.backup.resource_manager_id
+
+this property has been deprecated in favour of `id` and will be removed in
+version 5.0 of the Provider.
+
+(and one more similar warning elsewhere)
+Success! The configuration is valid, but there were some validation warnings
+as shown above.
+
+
+Comando: terraform plan -no-color -detailed-exitcode -input=false -lock=false
+Código de salida: 0 (0 sin cambios, 2 con cambios, 1 error)
+No changes. Your infrastructure matches the configuration.
+Warning: Deprecated value used
+Nota: resumen filtrado para evitar exposición de secretos; no se ejecutó apply.

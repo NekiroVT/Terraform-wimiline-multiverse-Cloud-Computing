@@ -1,0 +1,68 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: az network nsg rule list -g rg-wimiline-multicloud --nsg-name nsg-wimiline-integracion --include-default --query [].{name:name,priority:priority,direction:direction,access:access,source:sourceAddressPrefix,destination:destinationAddressPrefix,ports:destinationPortRange} -o json
+Código: 0
+[
+  {
+    "access": "Deny",
+    "destination": "*",
+    "direction": "Inbound",
+    "name": "DenyInternetInbound",
+    "ports": "*",
+    "priority": 200,
+    "source": "Internet"
+  },
+  {
+    "access": "Allow",
+    "destination": "VirtualNetwork",
+    "direction": "Inbound",
+    "name": "AllowVnetInBound",
+    "ports": "*",
+    "priority": 65000,
+    "source": "VirtualNetwork"
+  },
+  {
+    "access": "Allow",
+    "destination": "*",
+    "direction": "Inbound",
+    "name": "AllowAzureLoadBalancerInBound",
+    "ports": "*",
+    "priority": 65001,
+    "source": "AzureLoadBalancer"
+  },
+  {
+    "access": "Deny",
+    "destination": "*",
+    "direction": "Inbound",
+    "name": "DenyAllInBound",
+    "ports": "*",
+    "priority": 65500,
+    "source": "*"
+  },
+  {
+    "access": "Allow",
+    "destination": "VirtualNetwork",
+    "direction": "Outbound",
+    "name": "AllowVnetOutBound",
+    "ports": "*",
+    "priority": 65000,
+    "source": "VirtualNetwork"
+  },
+  {
+    "access": "Allow",
+    "destination": "Internet",
+    "direction": "Outbound",
+    "name": "AllowInternetOutBound",
+    "ports": "*",
+    "priority": 65001,
+    "source": "*"
+  },
+  {
+    "access": "Deny",
+    "destination": "*",
+    "direction": "Outbound",
+    "name": "DenyAllOutBound",
+    "ports": "*",
+    "priority": 65500,
+    "source": "*"
+  }
+]

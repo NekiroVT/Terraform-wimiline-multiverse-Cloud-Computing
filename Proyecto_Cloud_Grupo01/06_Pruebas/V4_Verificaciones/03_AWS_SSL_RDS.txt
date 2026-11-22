@@ -1,0 +1,11 @@
+Verificado: 20/11/2026 22:51:09 hora de Lima
+Comando: aws rds describe-db-parameters --region us-east-1 --db-parameter-group-name default.postgres18 --query Parameters[?ParameterName=='rds.force_ssl'].[ParameterName,ParameterValue,Source,ApplyType] --output json
+Código: 0
+[
+    [
+        "rds.force_ssl",
+        "1",
+        "system",
+        "dynamic"
+    ]
+]

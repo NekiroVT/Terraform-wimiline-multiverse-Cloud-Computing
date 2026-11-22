@@ -1,0 +1,57 @@
+{
+  "fecha_utc": "2026-11-20T07:21:59.207982+00:00",
+  "sitio_https": {
+    "exit_code": 0,
+    "output": "200"
+  },
+  "api_https": {
+    "exit_code": 0,
+    "output": "200"
+  },
+  "rds": {
+    "exit_code": 0,
+    "output": "[\n    {\n        \"id\": \"multiverso-db\",\n        \"status\": \"available\",\n        \"multi\": true,\n        \"public\": false\n    }\n]"
+  },
+  "asg": {
+    "exit_code": 0,
+    "output": "[\n    {\n        \"name\": \"wimiline-app-asg\",\n        \"min\": 2,\n        \"max\": 4,\n        \"desired\": 2,\n        \"instances\": [\n            \"InService\",\n            \"InService\"\n        ]\n    }\n]"
+  },
+  "cloudtrail": {
+    "exit_code": 0,
+    "output": "{\n    \"logging\": true,\n    \"latestError\": null\n}"
+  },
+  "backup": "Registro histórico, anterior a la actualización de las 21:15 UTC: RDS pg_dump -> S3 20261120T071611Z-ip-10-10-4-183 -> Blob Azure; SHA-256 y comparacion de descarga correctos. URL prefirmada temporal; automatizacion permanente pendiente.",
+  "restauracion": "PostgreSQL aislado en VM Azure: app_user=0, flyway_schema_history=1; iguales al origen consultado. Descarga y pg_restore 3 s; no es RTO integral.",
+  "limitaciones": "Datos previos no disponibles tras reinicio de cuenta. No se ha medido la recuperación integral hasta el servicio público; la validación aislada y la antigüedad de copia no garantizan RTO/RPO. El costo total depende de consumo variable.",
+  "prueba_registro": "Registro e inicio de sesión HTTP 200 con usuario de prueba en dominio .invalid; usuario y outbox retirados después de la prueba.",
+  "prueba_cola": "Evento de prueba llegó a SQS y fue procesado por Lambda, que descartó de forma intencional el dominio .invalid sin enviar correo. SMTP real pendiente.",
+  "prueba_restauracion_v2": "Copia S3 a Blob y restore en Azure de backup con registro sintético: app_user=1, fingerprint=6c77a8d7662dbd75ca2cec8cfdff3e41, registration_outbox=1, flyway_schema_history=2; coinciden con el origen consultado. Duración de copia y restauración 7 s; no es RTO integral.",
+  "despliegue": "Backend actualizado; instancias reemplazadas una a una por restricción de StartInstanceRefresh; HTTPS 200 durante comprobaciones puntuales.",
+  "backup_automatico": "Registro histórico, anterior a la actualización de las 21:15 UTC: Con autorización del usuario se cambió el flujo: EC2 exporta a S3, descarga la copia y la envía a Blob por HTTPS mediante SAS limitada; la VM Azure verificó SHA-256 para 20261120T074215Z-ip-10-10-3-184. Cron cada seis horas; falta observar un ciclo programado sin intervención.",
+  "seguridad_azure": "Endpoint público de Blob habilitado con acción predeterminada Deny y dos IP de NAT AWS permitidas; Private Endpoint conservado. SAS de escritura limitada con vencimiento: 20/12/2026 00:00 UTC. Rotar antes de esa fecha.",
+  "recuperacion_sesion": "Tras renovar AWS, RDS y ALB continuaron disponibles; ASG lanzó dos EC2 versión 3 y web/API volvieron HTTP 200. La suspensión previa causó fallos KMS para los lanzamientos mientras la sesión estaba revocada.",
+  "cron_prueba": "Registro histórico, anterior a la actualización de las 21:15 UTC: Cron temporal de una sola ejecución invocó el mismo script; produjo copia 20261120T112903Z-ip-10-10-3-17, eliminó su entrada temporal y Azure confirmó SHA-256. Cron normal permanece 15 */6 * * *; no se esperó un ciclo real completo.",
+  "seguridad_rds": "Desde el equipo externo, el endpoint RDS resolvió a IP privada 10.10.5.35 y la conexión TCP 5432 no se estableció en cuatro segundos. Esta prueba confirma el alcance de ese origen, no todos los controles.",
+  "alta_disponibilidad": "Sustitución controlada de una EC2: 75/75 sondeos de API por HTTPS devolvieron 200 durante 75 segundos; ver archivo sustitucion-ec2-2026-11-20.json.",
+  "escalamiento": "Con CPU sintética en dos instancias y monitoreo de un minuto, el ASG elevó la capacidad deseada 2→3→4. Los 20 sondeos periódicos devolvieron HTTP 200; no representa una prueba de capacidad de usuarios reales. Al terminar se verificó que los procesos de carga pararon y Terraform devolvió el deseado a 2.",
+  "aplicacion_restaurada": "En la VM privada Azure el backend ejecutado en localhost contra PostgreSQL restaurado devolvió 200 en /api/public/status, registro e inicio de sesión con usuario sintético. Arranque y verificaciones: 10 s, excluyendo descarga, preparación y habilitación pública; no es RTO integral. Se comprobó posteriormente que el rol temporal, el usuario de prueba y el puerto 18080 fueron retirados.",
+  "azure_monitor": "Evento WIMILINE_MONITOR_TEST_20261120 recibido en Log Analytics desde vm-wimiline-integracion a las 11:54:55 UTC; no prueba la entrega de alerta por correo.",
+  "correo_bienvenida": "El parámetro SecureString fue creado por el usuario. Se comprobó autenticación SMTP; un mensaje sintético fue enviado a SQS, Lambda registró aceptación por SMTP y el usuario confirmó recepción en wimiline.info@gmail.com. No representa un registro de usuario nuevo real.",
+  "cron_regular": "Ejecución programada de las 12:15 UTC: ambas instancias generaron backups en S3; se descargaron desde Azure ambas copias y manifiestos y sha256sum confirmó integridad.",
+  "correo_registro_real": "Registro e inicio de sesión con alias de prueba de la cuenta del usuario devolvieron HTTP 200; outbox indicó enviado, Lambda registró aceptación SMTP y el usuario confirmó recepción. La cuenta de prueba y el registro de outbox se eliminaron posteriormente.",
+  "objetivos": "El usuario aprobó como metas del proyecto RTO 60 minutos y RPO 6 horas. A las 15:09:23 UTC la copia comprobada iniciada a las 12:15:04 UTC tenía 2 h 54 min 19 s de antigüedad. No equivale a garantía de RPO ni a una medición de RTO de servicio público.",
+  "proveedor": "El usuario informó que el docente acepta Azure como alternativa a OCI.",
+  "nueva_frecuencia": "Tras aprobación del usuario se configuró cron 15 */3 en ambas EC2 y alerta de ausencia de 4 h. Una ejecución manual en cada EC2 generó copias 20261120T191712Z-ip-10-10-3-116 y 20261120T191712Z-ip-10-10-4-253; Azure verificó ambas con SHA-256. El disparo periódico con la nueva frecuencia aún no se observó.",
+  "ensayo_rto_publico_aislado": "El 20/11/2026 se ensayó una recuperación aislada en una VM temporal de Azure, a partir de una copia verificada por SHA-256. La web y API respondieron en 7 min 26 s; el registro y el inicio de sesión devolvieron HTTP 200 al cabo de 9 min 21 s desde el inicio, incluyendo demoras de comprobación. La copia tenía aproximadamente 5 min 50 s al iniciar el ensayo. Esta prueba usó HTTP restringido a una IP y no midió la conmutación real del dominio, DNS ni certificado HTTPS productivos; por ello no demuestra el RTO integral ni garantiza el RPO.",
+  "correccion_monitoreo_rds": "Terraform actualizó el panel y la alarma de CPU a DBInstanceIdentifier=multiverso-db. CloudWatch evaluó dos puntos de aproximadamente 4,11% y 4,30% y cambió el estado de INSUFFICIENT_DATA a OK el 20/11/2026.",
+  "ensayo_rto_https_aislado": "El 20/11/2026 se realizó un segundo ensayo aislado con HTTPS, certificado emitido previamente para multiverso.wimiline.com, resolución local forzada a la VM de recuperación y origen restringido a una IP. Web y API respondieron HTTP 200 a los 337,1 s; registro y login devolvieron HTTP 200 a los 338,7 s (5 min 39 s), desde la creación inicial del entorno. Incluye una corrección y reintento durante la recuperación. La copia tenía aproximadamente 32 min de antigüedad al iniciar. La emisión del certificado y el cambio de DNS productivo no forman parte del tiempo; no se realizó una conmutación real.",
+  "alerta_azure_confirmada": "El 20/11/2026 a las 20:04:17 UTC, una regla temporal de Azure Monitor para la CPU de la VM de integración pasó a Fired y el usuario confirmó la recepción del correo de ensayo en wimiline.info@gmail.com. La regla temporal se retiró mediante Terraform; la alerta real de CPU permaneció configurada. El comando de prueba incorporado del grupo de acciones devolvió Conflict: Free subscription not supported; por eso se utilizó una regla de prueba real.",
+  "eliminacion_s3_lotes": "Prueba local simulada: el script que apoya el ciclo de buckets divide 1001 versiones en lotes de 1000 y 1, sin acceder a AWS ni borrar datos. No equivale a haber ejecutado terraform destroy productivo.",
+  "cron_tres_horas_verificado": "El cron 15 */3 * * * produjo a las 21:15 UTC copias en ambas instancias; S3 las registró y desde la VM Azure se verificaron ambos archivos con SHA-256. Estas copias se ejecutaron antes de desplegar la vinculación al artefacto de aplicación.",
+  "fallo_simulado_respaldo_y_alerta": "En una copia temporal del script se insertó un fallo intencional después de instalar el manejador de errores. El script publicó CopyFailure=1, la alarma wimiline-respaldo-azure-error pasó a ALARM y el usuario confirmó el correo SNS. La prueba no alteró respaldos reales. Es una inyección controlada y no demuestra todos los tipos de fallo.",
+  "reintento_blob_y_acceso_no_autorizado": "Se cargó dos veces un mismo objeto sintético a la misma ruta de Azure Blob desde EC2 usando el flujo HTTPS autorizado. Desde la VM privada de Azure se recuperó el objeto con identidad administrada y se verificó SHA-256 acc25a7f6a85c33f6098b00537991b5a005ff2a848def3b53cd46bf7d42b8582; luego se eliminó el objeto sintético. Una solicitud al endpoint público sin autorización desde el equipo de prueba devolvió HTTP 403. La prueba verifica el objeto vigente y no evalúa versiones históricas si la configuración de almacenamiento cambia.",
+  "respaldo_con_release": "Una copia de prueba 20261120T203325Z-ip-10-10-4-253 incluyó release.sha256 en Azure; la VM Azure descargó la base y el ZIP de la aplicación desde Blob y verificó ambos SHA-256.",
+  "recuperacion_autonoma_azure": "Una VM aislada restauró base y paquete vinculados exclusivamente desde Azure Blob; frontend, API, registro y login respondieron HTTP 200 a los 268,2 segundos desde el inicio. Ensayo HTTP restringido; no conmutó DNS/TLS de producción.",
+  "respaldo_version6_dos_instancias": "Tras despliegue gradual de plantilla 6, ambas instancias ejecutaron su script actual. Las copias 20261120T214845Z-ip-10-10-3-110 y 20261120T214940Z-ip-10-10-4-89 se descargaron desde Azure y pasaron SHA-256; ambas incluyeron release.sha256 con la huella del paquete previamente verificado en Azure.",
+  "despliegue_gradual_version6": "Se elevó temporalmente el mínimo y deseado a 3 con Terraform, se esperaron destinos saludables y se sustituyeron gradualmente las dos instancias anteriores con CLI por restricción de Academy. Se comprobó HTTP 200 en sondeos del proceso; al terminar Terraform devolvió capacidad 2/2/4. No es prueba de disponibilidad continua sin huecos entre sondeos."
+}
