@@ -9,11 +9,11 @@
 
 | Archivo | Contenido |
 | --- | --- |
-| [Entregable_3_Final_Wimiline_V13.docx](Entregable_3_Final_Wimiline_V13.docx) | Informe final del Entregable 3 en Word editable. |
-| [Proyecto_Final.pdf](Proyecto_Final.pdf) | El **mismo informe** en PDF (52 páginas), con las secciones 2–27 y anexos A–J. |
+| [Entregable_3_Final_Wimiline_V13_CC.docx](Entregable_3_Final_Wimiline_V13_CC.docx) | Informe final del Entregable 3 en Word editable. |
+| [Proyecto_Final_Wimiline.pdf](Proyecto_Final_Wimiline.pdf) | El **mismo informe** en PDF (52 páginas), con las secciones 2–27 y anexos A–J. |
 | [LEEME.md](LEEME.md) | Índice de consulta del informe y orientación hacia los demás archivos del proyecto. |
 
-El archivo Word y el PDF **no son dos informes diferentes**. Son dos formatos del mismo Entregable 3. La denominación `Proyecto_Final.pdf` corresponde al nombre previsto para el informe final dentro de la estructura del curso.
+El archivo Word y el PDF **no son dos informes diferentes**. Son dos formatos del mismo Entregable 3. La denominación `Proyecto_Final_Wimiline.pdf` identifica el informe final del proyecto en este repositorio y conserva el contenido del Entregable 3.
 
 ## Contenido del informe
 
