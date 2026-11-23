@@ -43,6 +43,6 @@ El informe conserva los resultados de las pruebas registradas. No afirma que su 
 
 Esta guía describe **el contenido del paquete documental V13** y usa enlaces relativos, válidos al conservar juntos los tres archivos en `01_Informe`. No depende de un número de commit ni de afirmar si la publicación remota se produjo antes o después de preparar el documento.
 
-El repositorio proporciona código y evidencias, pero no concede acceso automático a AWS Academy ni a Azure for Students. Los accesos autorizados y el video explicativo de 5–10 minutos se presentan en la carpeta [10_Presentacion](../10_Presentacion/) (enlace oficial en YouTube: https://www.youtube.com/playlist?list=PLAJsklyIbw00).
+El repositorio proporciona código y evidencias, pero no concede acceso automático a AWS Academy ni a Azure for Students. Los accesos autorizados y el video explicativo de 5–10 minutos se presentan en la carpeta [10_Presentacion](../10_Presentacion/) (enlace oficial en YouTube: https://www.youtube.com/watch?v=WPSaheSxNLw / playlist: https://www.youtube.com/playlist?list=PLAJsklyIbw00).
 
 **Seguridad:** no incluir contraseñas personales, credenciales de laboratorio, tokens, SAS, claves privadas, `.tfstate`, `.tfvars` con secretos ni la carpeta `.terraform/`.

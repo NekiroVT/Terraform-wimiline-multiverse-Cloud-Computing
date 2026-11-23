@@ -26,4 +26,6 @@ El curso exige un video grabado con una duración de entre 5 y 10 minutos que de
 
 > [!NOTE]
 > **Enlace del Video de Sustentación Grabado:**  
-> 👉 [https://www.youtube.com/playlist?list=PLAJsklyIbw00](https://www.youtube.com/playlist?list=PLAJsklyIbw00) (duración: 5–10 min). Consignado también en [ENLACE_VIDEO_SUSTENTACION.txt](ENLACE_VIDEO_SUSTENTACION.txt).
+> 👉 **Video Oficial en YouTube:** [https://www.youtube.com/watch?v=WPSaheSxNLw](https://www.youtube.com/watch?v=WPSaheSxNLw)  
+> 👉 **Lista de Reproducción:** [https://www.youtube.com/playlist?list=PLAJsklyIbw00](https://www.youtube.com/playlist?list=PLAJsklyIbw00)  
+> Consignado formalmente en [ENLACE_VIDEO_SUSTENTACION.txt](ENLACE_VIDEO_SUSTENTACION.txt).
