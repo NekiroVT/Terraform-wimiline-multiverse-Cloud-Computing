@@ -17,5 +17,7 @@ acme-venv/
 
 # Logs and temporary files
 *.log
+*.bak
+*.tmp
 .DS_Store
 Thumbs.db

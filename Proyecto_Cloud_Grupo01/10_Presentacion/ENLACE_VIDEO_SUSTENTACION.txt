@@ -6,9 +6,7 @@ Duración requerida: 5 a 10 minutos
 
 ================================================================================
 ENLACE DEL VIDEO:
-[Coloca aquí el enlace de YouTube / Google Drive / OneDrive con permisos de visualización pública o institucional]
-
-Ejemplo: https://youtu.be/xxxxxxxxxxx ó https://drive.google.com/file/d/xxxxxxxxxxx/view
+https://www.youtube.com/playlist?list=PLAJsklyIbw00
 ================================================================================
 
 ESTRUCTURA DEL VIDEO GRABADO:

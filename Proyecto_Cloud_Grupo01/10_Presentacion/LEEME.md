@@ -25,4 +25,5 @@ El curso exige un video grabado con una duración de entre 5 y 10 minutos que de
 6. **Min 9:00 – 10:00 | Cierre:** Costo integral proyectado (USD 214.72/mes), conclusiones y recomendaciones.
 
 > [!NOTE]
-> Una vez grabado el video en OBS, Teams o Zoom, súbelo a YouTube (como *No listado*) o a Google Drive/OneDrive institucional con permiso de lectura público y pega la URL en [ENLACE_VIDEO_SUSTENTACION.txt](ENLACE_VIDEO_SUSTENTACION.txt).
+> **Enlace del Video de Sustentación Grabado:**  
+> 👉 [https://www.youtube.com/playlist?list=PLAJsklyIbw00](https://www.youtube.com/playlist?list=PLAJsklyIbw00) (duración: 5–10 min). Consignado también en [ENLACE_VIDEO_SUSTENTACION.txt](ENLACE_VIDEO_SUSTENTACION.txt).
